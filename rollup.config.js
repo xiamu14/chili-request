@@ -1,9 +1,11 @@
 import typescript from 'rollup-plugin-typescript2';
 import filesize from 'rollup-plugin-filesize';
+import commonjs from 'rollup-plugin-commonjs';
+import resolve from 'rollup-plugin-node-resolve';
+import external from 'rollup-plugin-peer-deps-external';
 import pkg from './package.json';
 
 export default [
-  // browser-friendly UMD build
   {
     input: 'src/index.ts',
     output: [
@@ -11,20 +13,24 @@ export default [
         file: pkg.main,
         format: 'cjs',
         exports: 'named',
-        sourcemap: true
+        sourcemap: true,
       },
       {
         file: pkg.module,
         format: 'es',
         exports: 'named',
-        sourcemap: true
-      }
+        sourcemap: true,
+      },
     ],
     plugins: [
-      filesize(),
+      external(),
+      resolve(),
       typescript({
-        declaration: true,
+        rollupCommonJSResolveHack: true,
+        clean: true,
       }),
+      commonjs(),
+      filesize(),
     ],
   },
 ];
