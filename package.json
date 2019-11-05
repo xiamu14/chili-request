@@ -1,0 +1,36 @@
+{
+  "name": "chili-request",
+  "version": "1.0.0-beta.1",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "module": "lib/index.es.js",
+  "jsnext:main": "lib/index.es.js",
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "rollup -c",
+    "jest": "jest --coverage"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.4",
+    "@babel/plugin-transform-runtime": "^7.6.2",
+    "@babel/preset-env": "^7.4.4",
+    "@babel/preset-typescript": "^7.6.0",
+    "@types/jest": "^24.0.11",
+    "all-contributors-cli": "^6.9.3",
+    "babel-jest": "^24.8.0",
+    "jest": "^24.5.0",
+    "rollup": "^1.6.0",
+    "rollup-plugin-filesize": "^6.0.1",
+    "rollup-plugin-typescript2": "^0.20.1",
+    "ts-jest": "^24.0.0",
+    "typescript": "^3.3.3333"
+  },
+  "dependencies": {
+    "@types/axios": "^0.14.0",
+    "@types/qs": "^6.5.3",
+    "axios": "^0.19.0",
+    "qs": "^6.9.0"
+  }
+}
