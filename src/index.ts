@@ -1,6 +1,6 @@
 import axios from 'axios';
 import axiosParamsConvert from './axios_params_convert';
-import transformToFormData from './transform_to_form_data';
+// import transformToFormData from './transform_to_form_data';
 import { BaseConfig, ReqConfig } from './type';
 
 export default function chiliReqBase(config: BaseConfig) {
@@ -42,13 +42,13 @@ export default function chiliReqBase(config: BaseConfig) {
     const paramCopy = axiosParamsConvert(regConfig.option);
 
     // NOTE: formData 转换数据格式
-    if (
-      paramCopy.data &&
-      paramCopy.headers &&
-      paramCopy.headers['Content-Type'] === 'multipart/form-data'
-    ) {
-      paramCopy.data = transformToFormData(paramCopy.data);
-    }
+    // if (
+    //   paramCopy.data &&
+    //   paramCopy.headers &&
+    //   paramCopy.headers['Content-Type'] === 'multipart/form-data'
+    // ) {
+    //   paramCopy.data = transformToFormData(paramCopy.data);
+    // }
 
     let response = null;
 
