@@ -1,2 +1,3 @@
-import { BaseConfig, ReqConfig } from './type';
-export default function chiliReqBase(config: BaseConfig): <T>(regConfig: ReqConfig) => Promise<T>;
+import chiliReqBase from './chili_req_base';
+export default chiliReqBase;
+export { ChiliReqContext, useChiliReq } from './hooks/use_chilireq';
