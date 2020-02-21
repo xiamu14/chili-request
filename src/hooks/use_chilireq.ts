@@ -11,5 +11,5 @@ export function useChiliReq() {
   if (config === undefined) {
     throw 'chiliReq missing baseConfig.';
   }
-  return chiliReqBase(config);
+  return () => chiliReqBase(config);
 }
