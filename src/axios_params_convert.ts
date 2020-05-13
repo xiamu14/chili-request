@@ -20,7 +20,7 @@ export interface Params {
 export default function axiosParamsConvert(params: Params) {
   const res: Record<string, any> = {};
 
-  Object.keys(params).forEach(item => {
+  Object.keys(params).forEach((item) => {
     // NOTE: sign = true , 将 data => params
     if (item === 'data') {
       if (params.method === 'GET') {
@@ -33,6 +33,12 @@ export default function axiosParamsConvert(params: Params) {
           params.headers['Content-Type'] === 'multipart/form-data'
         ) {
           res.data = transformToFormData(params.data);
+        } else if (
+          params.data &&
+          params.headers &&
+          params.headers['Content-Type'] === 'application/json'
+        ) {
+          res.data = params.data;
         } else {
           res.data = qs.stringify(params.data);
         }
