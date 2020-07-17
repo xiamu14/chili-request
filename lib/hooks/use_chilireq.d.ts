@@ -1,4 +1,7 @@
 import React from 'react';
-import { BaseConfig } from '../type';
+import { BaseConfig, ReqConfig } from '../type';
 export declare const ChiliReqContext: React.Context<BaseConfig | undefined>;
-export declare function useChiliReq(): () => <T>(regConfig: import("../type").ReqConfig) => Promise<T>;
+export declare function useChiliReq(): () => <T>(regConfig: ReqConfig) => Promise<T>;
+declare type Request = <T>(regConfig: ReqConfig) => Promise<T>;
+export declare function useFetch(): Request;
+export {};
