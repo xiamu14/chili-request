@@ -17,11 +17,10 @@ export function useChiliReq() {
 type Request = <T>(regConfig: ReqConfig) => Promise<T>;
 
 export function useFetch() {
-  const ref = useRef<Request>();
   const config = useContext(ChiliReqContext);
   if (config === undefined) {
     throw 'chiliReq missing baseConfig.';
   }
-  ref.current = chiliReqBase(config);
-  return ref.current;
+  const ref = useRef<Request>(chiliReqBase(config));
+  return ref;
 }
