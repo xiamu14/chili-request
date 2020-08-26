@@ -21,6 +21,7 @@ function getTransAmountCurve(data: { page: number; size: number }) {
       method: 'GET',
       url: '/getUserList',
       data,
+      cache: {type: "session" as "session"}
     },
   };
 }

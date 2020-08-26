@@ -14,6 +14,7 @@ export type ReqConfig = {
     data?: any;
     timeout?: number;
     withCredentials?: boolean;
+    cache?: { type: 'session' };
   };
   middle?: Function;
 };
