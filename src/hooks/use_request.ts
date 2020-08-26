@@ -1,5 +1,5 @@
 import React, { useContext, useRef } from 'react';
-import chiliReqBase from '../chili_req_base_source';
+import chiliReqBase from '../chili_req_base';
 import { BaseConfig, ReqConfig } from '../type';
 
 export const ChiliReqContext = React.createContext<BaseConfig | undefined>(
